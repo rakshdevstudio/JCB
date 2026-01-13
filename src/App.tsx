@@ -11,6 +11,9 @@ import Offers from "./pages/Offers";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
+import FindSalon from "./pages/FindSalon";
+import Bridal from "./pages/Bridal";
 
 // Admin Pages
 import AdminLayout from "./components/admin/AdminLayout";
@@ -40,6 +43,9 @@ const App = () => (
             <Route path="/offers" element={<Offers />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/find-salon" element={<FindSalon />} />
+            <Route path="/bridal" element={<Bridal />} />
 
             {/* Admin Routes */}
             <Route

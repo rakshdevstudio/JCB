@@ -80,7 +80,7 @@ export const SalonLocator = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Link to="/salons">
+            <Link to="/find-salon">
               <button className="btn-outline-luxury flex items-center gap-2">
                 View All Salons
                 <ChevronRight className="w-4 h-4" />
@@ -104,11 +104,10 @@ export const SalonLocator = () => {
                   <button
                     key={city.name}
                     onClick={() => setSelectedCity(city.name)}
-                    className={`w-full flex items-center justify-between px-4 py-3 text-left transition-all duration-300 ${
-                      selectedCity === city.name
+                    className={`w-full flex items-center justify-between px-4 py-3 text-left transition-all duration-300 ${selectedCity === city.name
                         ? "bg-primary text-primary-foreground"
                         : "hover:bg-accent text-foreground"
-                    }`}
+                      }`}
                   >
                     <span className="text-sm font-medium">{city.name}</span>
                     <span className={`text-xs ${selectedCity === city.name ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
@@ -129,7 +128,7 @@ export const SalonLocator = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
               >
-                <Link to={`/salons/${salon.id}`} className="block group">
+                <Link to={`/find-salon?id=${salon.id}`} className="block group">
                   <div className="card-luxury">
                     {/* Image */}
                     <div className="relative aspect-[3/2] overflow-hidden">
@@ -138,7 +137,7 @@ export const SalonLocator = () => {
                         style={{ backgroundImage: `url('${salon.image}')` }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
-                      
+
                       {/* Rating Badge */}
                       <div className="absolute bottom-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full">
                         <Star className="w-3.5 h-3.5 fill-gold text-gold" />

@@ -19,7 +19,7 @@ const footerLinks = {
     { name: "Press", href: "/press" },
   ],
   support: [
-    { name: "Find a Salon", href: "/salons" },
+    { name: "Find a Salon", href: "/find-salon" },
     { name: "Book Appointment", href: "/book" },
     { name: "Gift Cards", href: "/gift-cards" },
     { name: "Contact Us", href: "/contact" },
@@ -49,10 +49,10 @@ export const Footer = () => {
               </p>
             </Link>
             <p className="text-sm text-white/60 leading-relaxed mb-8 max-w-sm">
-              Where Parisian elegance meets Indian soul. Experience world-class 
+              Where Parisian elegance meets Indian soul. Experience world-class
               beauty services at 50+ luxury salons across India.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3 mb-8">
               <a

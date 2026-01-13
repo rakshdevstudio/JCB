@@ -55,7 +55,7 @@ export const BookingCTA = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg text-white/70 mb-12 max-w-xl mx-auto"
           >
-            Your journey to extraordinary beauty begins with a single step. 
+            Your journey to extraordinary beauty begins with a single step.
             Book now and let our expert stylists craft your perfect look.
           </motion.p>
 
@@ -75,7 +75,7 @@ export const BookingCTA = () => {
                 Book Appointment
               </motion.button>
             </Link>
-            <Link to="/salons">
+            <Link to="/find-salon">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

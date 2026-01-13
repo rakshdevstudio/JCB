@@ -14,7 +14,7 @@ import {
 const navLinks = [
   { name: "Services", href: "/services" },
   { name: "Offers", href: "/offers" },
-  { name: "Find a Salon", href: "/salons" },
+  { name: "Find a Salon", href: "/find-salon" },
   { name: "Bridal", href: "/bridal" },
   { name: "About", href: "/about" },
 ];
@@ -44,11 +44,10 @@ export const Navigation = () => {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
             ? "bg-background/90 backdrop-blur-lg shadow-soft py-4"
             : "bg-transparent py-6"
-        }`}
+          }`}
       >
         <nav className="container mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between">
@@ -59,14 +58,12 @@ export const Navigation = () => {
                 transition={{ duration: 0.3 }}
                 className="flex flex-col"
               >
-                <span className={`font-serif text-xl md:text-2xl font-medium tracking-tight transition-colors duration-300 ${
-                  isScrolled ? "text-foreground" : "text-white"
-                }`}>
+                <span className={`font-serif text-xl md:text-2xl font-medium tracking-tight transition-colors duration-300 ${isScrolled ? "text-foreground" : "text-white"
+                  }`}>
                   Jean-Claude Biguine
                 </span>
-                <span className={`text-[10px] uppercase tracking-[0.3em] transition-colors duration-300 ${
-                  isScrolled ? "text-muted-foreground" : "text-white/70"
-                }`}>
+                <span className={`text-[10px] uppercase tracking-[0.3em] transition-colors duration-300 ${isScrolled ? "text-muted-foreground" : "text-white/70"
+                  }`}>
                   Salon & Spa
                 </span>
               </motion.div>
@@ -78,11 +75,10 @@ export const Navigation = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`link-underline text-sm tracking-wide transition-colors duration-300 ${
-                    isScrolled
+                  className={`link-underline text-sm tracking-wide transition-colors duration-300 ${isScrolled
                       ? "text-foreground hover:text-primary"
                       : "text-white/90 hover:text-white"
-                  }`}
+                    }`}
                 >
                   {link.name}
                 </Link>
@@ -96,11 +92,10 @@ export const Navigation = () => {
                   <motion.button
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`px-4 py-3 text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300 ${
-                      isScrolled
+                    className={`px-4 py-3 text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300 ${isScrolled
                         ? "text-foreground hover:text-primary"
                         : "text-white/90 hover:text-white"
-                    }`}
+                      }`}
                   >
                     Login
                   </motion.button>
@@ -112,11 +107,10 @@ export const Navigation = () => {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`flex items-center gap-2 px-4 py-3 text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300 ${
-                        isScrolled
+                      className={`flex items-center gap-2 px-4 py-3 text-xs uppercase tracking-[0.15em] font-medium transition-all duration-300 ${isScrolled
                           ? "text-foreground hover:text-primary"
                           : "text-white/90 hover:text-white"
-                      }`}
+                        }`}
                     >
                       <User size={16} />
                       {profile?.full_name || "Account"}
@@ -134,7 +128,7 @@ export const Navigation = () => {
                         <DropdownMenuSeparator />
                       </>
                     )}
-                    <DropdownMenuItem 
+                    <DropdownMenuItem
                       onClick={handleSignOut}
                       className="flex items-center gap-2 cursor-pointer text-destructive"
                     >
@@ -148,11 +142,10 @@ export const Navigation = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`px-6 py-3 text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 ${
-                    isScrolled
+                  className={`px-6 py-3 text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 ${isScrolled
                       ? "bg-primary text-primary-foreground hover:shadow-luxury"
                       : "bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20"
-                  }`}
+                    }`}
                 >
                   Book Now
                 </motion.button>
@@ -162,9 +155,8 @@ export const Navigation = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 transition-colors ${
-                isScrolled ? "text-foreground" : "text-white"
-              }`}
+              className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-foreground" : "text-white"
+                }`}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -241,7 +233,7 @@ export const Navigation = () => {
                     </Link>
                   )}
                   {!isLoading && user && (
-                    <button 
+                    <button
                       onClick={() => { handleSignOut(); setIsMobileMenuOpen(false); }}
                       className="w-full flex items-center justify-center gap-2 py-3 border border-destructive text-destructive hover:bg-destructive/10 transition-colors"
                     >
