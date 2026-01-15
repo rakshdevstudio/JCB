@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 
@@ -48,6 +49,7 @@ const ServiceSection = ({
 };
 
 const Services = () => {
+    const navigate = useNavigate();
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -122,7 +124,10 @@ const Services = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.1, duration: 0.8 }}
                     >
-                        <button className="mt-8 px-10 py-4 bg-white text-neutral-900 text-sm tracking-widest uppercase hover:bg-neutral-100 transition-colors duration-300">
+                        <button
+                            onClick={() => navigate('/book')}
+                            className="mt-8 px-10 py-4 bg-white text-neutral-900 text-sm tracking-widest uppercase hover:bg-neutral-100 transition-colors duration-300"
+                        >
                             Book Appointment
                         </button>
                     </motion.div>
