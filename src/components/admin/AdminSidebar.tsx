@@ -12,6 +12,7 @@ import {
   ChevronRight,
   UserCog,
   Tag,
+  Globe,
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import {
@@ -64,9 +65,9 @@ export const AdminSidebar = () => {
   const filteredManagementItems = managementItems.filter((item) => hasAccess(item.roles));
 
   return (
-    <Sidebar className={cn("border-r border-border bg-card", collapsed ? "w-16" : "w-64")}>
-      <SidebarHeader className="border-b border-border p-4">
-        <div className="flex items-center justify-between">
+    <Sidebar collapsible="icon" className="border-r border-border bg-card">
+      <SidebarHeader className={cn("border-b border-border", collapsed ? "p-2" : "p-4")}>
+        <div className={cn("flex items-center", collapsed ? "justify-center" : "justify-between")}>
           {!collapsed && (
             <Link to="/admin" className="flex flex-col">
               <span className="text-lg font-serif text-foreground">JCB Admin</span>
@@ -167,6 +168,16 @@ export const AdminSidebar = () => {
       </SidebarContent>
 
       <SidebarFooter className="border-t border-border p-4">
+        <Link
+          to="/"
+          className={cn(
+            "flex items-center gap-3 px-3 py-2 rounded-md transition-colors w-full mb-2",
+            "text-muted-foreground hover:bg-primary/10 hover:text-primary group"
+          )}
+        >
+          <Globe className="w-5 h-5 flex-shrink-0 transition-transform group-hover:rotate-12" />
+          {!collapsed && <span>Back to Website</span>}
+        </Link>
         {!collapsed && profile && (
           <div className="mb-3">
             <p className="text-sm font-medium text-foreground truncate">

@@ -24,6 +24,8 @@ import Services from "./pages/admin/Services";
 import Salons from "./pages/admin/Salons";
 import Settings from "./pages/admin/Settings";
 import AdminOffers from "./pages/admin/Offers";
+import Cities from "./pages/admin/Cities";
+import UserRoles from "./pages/admin/UserRoles";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +76,22 @@ const App = () => (
                 element={
                   <ProtectedRoute allowedRoles={["super_admin"]}>
                     <AdminOffers />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="cities"
+                element={
+                  <ProtectedRoute allowedRoles={["super_admin"]}>
+                    <Cities />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="roles"
+                element={
+                  <ProtectedRoute allowedRoles={["super_admin"]}>
+                    <UserRoles />
                   </ProtectedRoute>
                 }
               />

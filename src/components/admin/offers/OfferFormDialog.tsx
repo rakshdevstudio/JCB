@@ -25,7 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ScrollArea } from "@/components/ui/scroll-area";
+
 import { CalendarIcon, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useCreateOffer, useUpdateOffer, Offer, CreateOfferData } from "@/hooks/useOffers";
@@ -155,7 +155,7 @@ export const OfferFormDialog = ({ open, onOpenChange, offer }: OfferFormDialogPr
           </DialogTitle>
         </DialogHeader>
 
-        <ScrollArea className="flex-1 -mx-6 px-6">
+        <div className="flex-1 -mx-6 px-6 overflow-y-auto">
           <form onSubmit={handleSubmit} className="space-y-6 pb-4">
             {/* Title */}
             <div className="space-y-2">
@@ -401,7 +401,7 @@ export const OfferFormDialog = ({ open, onOpenChange, offer }: OfferFormDialogPr
               </Button>
             </div>
           </form>
-        </ScrollArea>
+        </div>
       </DialogContent>
     </Dialog>
   );
