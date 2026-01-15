@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import About from "./pages/About";
 import FindSalon from "./pages/FindSalon";
 import Bridal from "./pages/Bridal";
+import PublicServices from "./pages/Services";
 
 // Admin Pages
 import AdminLayout from "./components/admin/AdminLayout";
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/find-salon" element={<FindSalon />} />
             <Route path="/bridal" element={<Bridal />} />
+            <Route path="/services" element={<PublicServices />} />
 
             {/* Admin Routes */}
             <Route
